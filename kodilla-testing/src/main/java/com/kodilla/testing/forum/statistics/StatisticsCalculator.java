@@ -2,6 +2,8 @@ package com.kodilla.testing.forum.statistics;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.*;
+
 public class StatisticsCalculator {
     private int usersCount;
     private int postsCount;
