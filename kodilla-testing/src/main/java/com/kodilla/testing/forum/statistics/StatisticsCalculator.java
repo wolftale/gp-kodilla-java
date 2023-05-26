@@ -1,8 +1,7 @@
 package com.kodilla.testing.forum.statistics;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.*;
+
 
 public class StatisticsCalculator {
     private int usersCount;
@@ -66,31 +65,3 @@ public class StatisticsCalculator {
         return avgCommentsPerPost;
     }
 }
-
-class ForumStatistics implements Statistics {
-    private List<String> users;
-    private int postsCount;
-    private int commentsCount;
-
-    public ForumStatistics() {
-        this.users = Arrays.asList("User1", "User2", "User3");
-        this.postsCount = 100;
-        this.commentsCount = 500;
-    }
-
-    @Override
-    public List<String> usersNames() {
-        return users;
-    }
-
-    @Override
-    public int postsCount() {
-        return postsCount;
-    }
-
-    @Override
-    public int commentsCount() {
-        return commentsCount;
-    }
-}
-
