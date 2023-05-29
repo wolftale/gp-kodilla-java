@@ -3,9 +3,8 @@ plugins {
 
 }
 
-group = 'com.example'
+group = 'com.kodilla'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -13,8 +12,10 @@ repositories {
 
 dependencies {
 
+implementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    implementation 'org.springframework.boot:spring-boot-starter-test:3.1.0'
 }
 
-test {
-    useJUnitPlatform()
+    test {
+        useJUnitPlatform()
 }

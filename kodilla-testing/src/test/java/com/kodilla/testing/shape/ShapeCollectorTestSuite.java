@@ -43,7 +43,7 @@ class ShapeCollectorTestSuite {
             collector.removeFigure(shape);
 
             // then
-            assertEquals(0, collector.showFigures().split(", ").length);
+            assertEquals(1, collector.showFigures().split(", ").length);
             assertEquals("", collector.showFigures());
         }
     }
