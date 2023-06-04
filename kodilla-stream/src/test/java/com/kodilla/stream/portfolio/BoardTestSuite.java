@@ -70,10 +70,12 @@ class BoardTestSuite {
         TaskList taskListToDo = new TaskList("To do");
         taskListToDo.addTask(task1);
         taskListToDo.addTask(task3);
+
         TaskList taskListInProgress = new TaskList("In progress");
         taskListInProgress.addTask(task5);
         taskListInProgress.addTask(task4);
         taskListInProgress.addTask(task2);
+
         TaskList taskListDone = new TaskList("Done");
         taskListDone.addTask(task6);
 
@@ -129,18 +131,32 @@ class BoardTestSuite {
         Board project = prepareTestData();
 
         //When
-        List<TaskList> inProgressTasks = new ArrayList<>();               // [1]
-        inProgressTasks.add(new TaskList("In progress"));                 // [2]
-        long longTasks = project.getTaskLists().stream()                  // [3]
-                .filter(inProgressTasks::contains)                             // [4]
-                .flatMap(tl -> tl.getTasks().stream())                         // [5]
-                .map(Task::getCreated)                                         // [6]
-                .filter(d -> d.compareTo(LocalDate.now().minusDays(10)) <= 0)  // [7]
-                .count();                                                      // [8]
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        long longTasks = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(Task::getCreated)
+                .filter(d -> d.compareTo(LocalDate.now().minusDays(10)) <= 0)
+                .count();
 
         //Then
-        assertEquals(2, longTasks);                                       // [9]
+        assertEquals(2, longTasks);
     }
 
+    /*
+    Zadanie7.6: średnia liczba dni realizacji zadania
+     */
 
+    @Test
+    void testAddTaskListAverageWorkingOnTask() {
+        // Given
+        Board project = prepareTestData();
+
+        // When
+        double averageDays = project.calculateAverageDaysInProgress();
+
+        // Then
+        assertEquals(10.0, averageDays, 0.01);
+    }
 }

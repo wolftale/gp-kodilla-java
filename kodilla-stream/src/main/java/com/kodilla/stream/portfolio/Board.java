@@ -1,5 +1,7 @@
 package com.kodilla.stream.portfolio;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +36,29 @@ public final class Board {
                 "name='" + name + '\'' + ",\n" +
                 "taskLists=" + taskLists + "\n" +
                 '}';
+    }
+
+
+    /*
+    Zadanie7.6: średnia liczba dni realizacji zadania
+     */
+
+    public double calculateAverageDaysInProgress() {
+        int sumDays = taskLists.stream()
+                .filter(taskList -> taskList.getName().equals("In progress"))
+                .flatMap(taskList -> taskList.getTasks().stream())
+                .mapToInt(task -> (int) ChronoUnit.DAYS.between(task.getCreated(), LocalDate.now()))
+                .sum();
+
+        long count = taskLists.stream()
+                .filter(taskList -> taskList.getName().equals("In progress"))
+                .flatMap(taskList -> taskList.getTasks().stream())
+                .count();
+
+        if (count > 0) {
+            return (double) sumDays / count;
+        } else {
+            return 0.0;
+        }
     }
 }
