@@ -40,7 +40,7 @@ public final class Board {
 
 
     /*
-    Zadanie7.6: średnia liczba dni realizacji zadania
+    Zadanie 7.6: średnia liczba dni realizacji zadania
      */
 
     public double calculateAverageDaysInProgress() {

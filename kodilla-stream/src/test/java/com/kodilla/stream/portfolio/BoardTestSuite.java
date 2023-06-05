@@ -145,7 +145,7 @@ class BoardTestSuite {
     }
 
     /*
-    Zadanie7.6: średnia liczba dni realizacji zadania
+    Zadanie 7.6: średnia liczba dni realizacji zadania
      */
 
     @Test
