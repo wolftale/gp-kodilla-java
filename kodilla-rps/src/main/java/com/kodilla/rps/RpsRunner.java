@@ -91,7 +91,7 @@ public class RpsRunner {
                     gameFinished = true;
                     System.out.println("\n===== Game Over =====");
                     printGameSummary(playerName, playerScore, computerScore);
-                    System.out.println("======================\n");
+                    System.out.println("=======================\n");
 
                     System.out.println("\n===== Choose an option: =====");
                     System.out.println("n - Start a new game");
