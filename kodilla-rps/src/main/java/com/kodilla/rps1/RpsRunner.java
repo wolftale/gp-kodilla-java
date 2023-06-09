@@ -20,6 +20,7 @@ public class RpsRunner {
             Game game = new Game(playerName, roundsToWin, difficulty);
             game.play();
 
+            //Po zakończeniu gry
             System.out.println("\n===== Choose an option: =====");
             System.out.println("n - Start a new game");
             System.out.println("x - End the game");
@@ -57,4 +58,3 @@ public class RpsRunner {
         }
     }
 }
-

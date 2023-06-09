@@ -14,16 +14,26 @@ public class Computer {
     public String makeMove() {
         String[] choices = {"rock", "paper", "scissors", "lizard", "spock"};
 
-        if (difficulty.equals("easy")) {
-            return choices[random.nextInt(choices.length)];
-        } else if (difficulty.equals("normal")) {
-            int randomIndex = random.nextInt(choices.length - 2);
-            return choices[randomIndex];
-        } else {
-            int randomIndex = random.nextInt(choices.length);
-            return choices[randomIndex];
+        switch (difficulty) {
+            case "easy":
+                if (random.nextInt(100) < 30) {
+                    return getWinningMove();
+                } else {
+                    return choices[random.nextInt(choices.length)];
+                }
+            case "hard":
+                if (random.nextInt(100) < 70) {
+                    return getWinningMove();
+                } else {
+                    return choices[random.nextInt(choices.length)];
+                }
+            default:
+                return choices[random.nextInt(choices.length)];
         }
     }
+
+    private String getWinningMove() {
+        String[] winningMoves = {"paper", "scissors", "rock", "spock", "lizard"};
+        return winningMoves[random.nextInt(winningMoves.length)];
+    }
 }
-
-
