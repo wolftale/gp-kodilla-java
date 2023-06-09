@@ -1,5 +1,7 @@
 package com.kodilla.rps1;
 
+import java.util.Scanner;
+
 public class Game {
     private String playerName;
     private int roundsToWin;
@@ -53,6 +55,27 @@ public class Game {
             System.out.println("Computer wins! Better luck next time, " + playerName + "!");
         } else {
             System.out.println("It's a tie!");
+        }
+    }
+
+    public static String chooseDifficulty(Scanner scanner) {
+        System.out.println("Choose difficulty level:");
+        System.out.println("1 - Easy");
+        System.out.println("2 - Normal");
+        System.out.println("3 - Hard");
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                return "easy";
+            case 2:
+                return "normal";
+            case 3:
+                return "hard";
+            default:
+                System.out.println("Invalid choice. Setting difficulty level to normal.");
+                return "normal";
         }
     }
 }
