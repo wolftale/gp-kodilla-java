@@ -37,7 +37,7 @@ public class RpsRunner {
             }
         }
     }
-
+}
 //    public static String chooseDifficulty(Scanner scanner) {
 //        System.out.println("Choose difficulty level:");
 //        System.out.println("1 - Easy");
@@ -58,4 +58,4 @@ public class RpsRunner {
 //                return "normal";
 //        }
 //    }
-}
+
