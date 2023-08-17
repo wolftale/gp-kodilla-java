@@ -1,5 +1,7 @@
 package com.kodilla.stream.book;
 
+import lombok.Data;
+
 public final class Book {
     private final String author;
     private final String title;

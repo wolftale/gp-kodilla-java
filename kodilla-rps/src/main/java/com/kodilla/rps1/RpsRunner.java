@@ -2,7 +2,6 @@ package com.kodilla.rps1;
 
 import java.util.Scanner;
 
-
 public class RpsRunner {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -37,7 +36,7 @@ public class RpsRunner {
             }
         }
     }
-
+}
 //    public static String chooseDifficulty(Scanner scanner) {
 //        System.out.println("Choose difficulty level:");
 //        System.out.println("1 - Easy");
@@ -58,4 +57,4 @@ public class RpsRunner {
 //                return "normal";
 //        }
 //    }
-}
+
