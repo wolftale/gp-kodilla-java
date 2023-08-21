@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.product_ordering;
 
 import java.time.LocalDateTime;
 
-public class ProductOrderService  implements OrderService {
+public class ProductOrderService implements OrderService {
     private User user;
     private String productName;
     private int quantity;
