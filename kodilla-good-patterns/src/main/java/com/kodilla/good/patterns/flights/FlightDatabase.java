@@ -20,33 +20,26 @@ public class FlightDatabase {
 
     public void initializeFlightsData() {
         // flights without transfer
-        addFlight(new Flight("LO 123", "Warszawa", "Kraków", null));
-        addFlight(new Flight("LO 123", "Warszawa", "Gdańsk", null));
-        addFlight(new Flight("LO 123", "Warszawa", "Wrocław", null));
-        addFlight(new Flight("LO 123", "Warszawa", "Szczecin", null));
-        addFlight(new Flight("LO 123", "Warszawa", "Katowice", null));
-        addFlight(new Flight("LO 123", "Kraków", "Warszawa", null));
-        addFlight(new Flight("LO 123", "Kraków", "Gdańsk", "Wrocław"));
-        addFlight(new Flight("LO 123", "Kraków", "Wrocław", null));
-        addFlight(new Flight("LO 123", "Kraków", "Szczecin", "Warszawa"));
-        addFlight(new Flight("LO 123", "Kraków", "Gdańsk", "Katowice"));
-        addFlight(new Flight("LO 123", "Gdańsk", "Kraków", null));
-        addFlight(new Flight("LO 123", "Gdańsk", "Warszawa", null));
-        addFlight(new Flight("LO 123", "Gdańsk", "Katowice", null));
-        addFlight(new Flight("LO 123", "Gdańsk", "Katowice", "Wrocław"));
-        addFlight(new Flight("LO 123", "Gdańsk", "Katowice", "Kraków"));
-        addFlight(new Flight("LO 123", "Katowice", "Warszawa", null));
-        addFlight(new Flight("LO 123", "Katowice", "Gdańsk", null));
-        addFlight(new Flight("LO 123", "Katowice", "Szczecin", "Warszawa"));
-        addFlight(new Flight("LO 123", "Katowice", "Szczecin", "Wrocłąw"));
-        addFlight(new Flight("LO 123", "Katowice", "Gdańsk", "Warszawa"));
-        addFlight(new Flight("LO 123", "Szczecin", "Kraków", "Warszawa"));
-        addFlight(new Flight("LO 123", "Szczecin", "Katowice", "Wrocław"));
-        addFlight(new Flight("LO 123", "Szczecin", "Wrocław", null));
-        addFlight(new Flight("LO 123", "Wrocław", "Gdańsk", null));
-        addFlight(new Flight("LO 123", "Wrocław", "Gdańsk", "Warszawa"));
-        addFlight(new Flight("LO 123", "Wrocław", "Katowice", null));
-        addFlight(new Flight("LO 123", "Wrocław", "Szczecin", "Warszawa"));
-        addFlight(new Flight("LO 123", "Wrocław", "Kraków", null));
+        addFlight(new Flight("LO 123", "Warszawa", "Kraków"));
+        addFlight(new Flight("LO 124", "Warszawa", "Gdańsk"));
+        addFlight(new Flight("LO 125", "Warszawa", "Wrocław"));
+        addFlight(new Flight("LO 126", "Warszawa", "Szczecin"));
+        addFlight(new Flight("LO 127", "Warszawa", "Katowice"));
+        addFlight(new Flight("LO 128", "Kraków", "Warszawa"));
+        addFlight(new Flight("LO 129", "Kraków", "Wrocław"));
+        addFlight(new Flight("LO 130", "Kraków", "Szczecin"));
+        addFlight(new Flight("LO 131", "Gdańsk", "Kraków"));
+        addFlight(new Flight("LO 132", "Gdańsk", "Warszawa"));
+        addFlight(new Flight("LO 133", "Gdańsk", "Katowice"));
+        addFlight(new Flight("LO 134", "Gdańsk", "Szczecin"));
+        addFlight(new Flight("LO 135", "Gdańsk", "Wrocław"));
+        addFlight(new Flight("LO 136", "Katowice", "Warszawa"));
+        addFlight(new Flight("LO 137", "Katowice", "Gdańsk"));
+        addFlight(new Flight("LO 138", "Szczecin", "Wrocław"));
+        addFlight(new Flight("LO 139", "Wrocław", "Gdańsk"));
+        addFlight(new Flight("LO 140", "Wrocław", "Warszawa"));
+        addFlight(new Flight("LO 141", "Wrocław", "Katowice"));
+        addFlight(new Flight("LO 142", "Wrocław", "Szczecin"));
+        addFlight(new Flight("LO 143", "Wrocław", "Kraków"));
     }
 }

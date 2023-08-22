@@ -6,13 +6,11 @@ public class Flight {
     private String flightNumber;
     private String departureAirport;
     private String arrivalAirport;
-    private String transferAirport;
 
-    public Flight(String flightNumber, String departureAirport, String arrivalAirport, String transferAirport) {
+    public Flight(String flightNumber, String departureAirport, String arrivalAirport) {
         this.flightNumber = flightNumber;
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
-        this.transferAirport = transferAirport;
     }
 
     public String getFlightNumber() {
@@ -27,10 +25,6 @@ public class Flight {
         return arrivalAirport;
     }
 
-    public String getTransferAirport() {
-        return transferAirport;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,12 +32,11 @@ public class Flight {
         Flight flight = (Flight) o;
         return Objects.equals(flightNumber, flight.flightNumber) &&
                 Objects.equals(departureAirport, flight.departureAirport) &&
-                Objects.equals(arrivalAirport, flight.arrivalAirport) &&
-                Objects.equals(transferAirport, flight.transferAirport);
+                Objects.equals(arrivalAirport, flight.arrivalAirport);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flightNumber, departureAirport, arrivalAirport, transferAirport);
+        return Objects.hash(flightNumber, departureAirport, arrivalAirport);
     }
 }

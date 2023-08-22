@@ -26,7 +26,7 @@ public class ConsoleUI {
             displayMenu();
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -61,15 +61,22 @@ public class ConsoleUI {
         if (flights.isEmpty()) {
             System.out.println("No flights found.");
         } else {
+            System.out.println("========");
             System.out.println("Flights:");
+            System.out.println("========");
+
             for (Flight flight : flights) {
                 System.out.println("Flight Number: " + flight.getFlightNumber());
+                System.out.println("-------------------------");
                 System.out.println("Departure Airport: " + flight.getDepartureAirport());
                 System.out.println("Arrival Airport: " + flight.getArrivalAirport());
-                if (flight.getTransferAirport() != null) { // Check for null transfer airport
-                    System.out.println("Transfer Airport: " + flight.getTransferAirport());
+
+                if (flight.getFlightNumber().contains("->")) {
+                    // This is a transfer flight, so display the transfer information
+                    String[] flightNumbers = flight.getFlightNumber().split(" -> ");
+                    System.out.println("Transfer Flight: " + flightNumbers[0] + " to " + flightNumbers[1]);
                 }
-                System.out.println(); // Add an empty line between flights
+                System.out.println();
             }
         }
     }
