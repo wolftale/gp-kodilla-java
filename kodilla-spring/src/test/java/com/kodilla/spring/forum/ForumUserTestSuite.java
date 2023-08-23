@@ -22,3 +22,4 @@ public class ForumUserTestSuite {
         assertEquals("John Smith", username);
     }
 }
+

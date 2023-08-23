@@ -14,3 +14,4 @@ public class ForumUser {
         return username;
     }
 }
+
