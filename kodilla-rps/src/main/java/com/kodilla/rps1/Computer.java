@@ -1,4 +1,4 @@
-package com.kodilla.rps1;
+git package com.kodilla.rps1;
 
 import java.util.Random;
 
@@ -37,3 +37,6 @@ public class Computer {
         return winningMoves[random.nextInt(winningMoves.length)];
     }
 }
+
+
+
