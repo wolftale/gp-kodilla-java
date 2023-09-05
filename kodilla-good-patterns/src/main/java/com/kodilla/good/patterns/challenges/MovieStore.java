@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class MovieStore {
+public class MovieStore {
     public Map<String, List<String>> getMovies() {
         List<String> ironManTranslations = new ArrayList<>();
         ironManTranslations.add("Żelazny Człowiek");
@@ -27,5 +27,11 @@ class MovieStore {
         return booksTitlesWithTranslations;
     }
 
-
+    public static void main(String[] args) {
+        MovieStore movieStore = new MovieStore();
+        movieStore.getMovies().entrySet().stream()
+                .flatMap(entry -> entry.getValue().stream())
+                .reduce((title1, title2) -> title1 + " ! " + title2)
+                .ifPresent(System.out::print);
+    }
 }

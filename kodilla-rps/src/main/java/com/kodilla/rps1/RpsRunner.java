@@ -2,7 +2,6 @@ package com.kodilla.rps1;
 
 import java.util.Scanner;
 
-
 public class RpsRunner {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
