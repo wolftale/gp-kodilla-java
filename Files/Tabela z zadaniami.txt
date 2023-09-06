@@ -1,0 +1,51 @@
+1. Napisz polecenie SQL tworzące tabelę ISSUESLISTS, wraz z jej ograniczeniami i więzami integralności.
+
+CREATE TABLE ISSUESLISTS (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(255) NOT NULL
+);
+
+2. Napisz polecenie SQL tworzące tabelę ISSUES, wraz z jej ograniczeniami i więzami integralności.
+
+CREATE TABLE ISSUES (
+    ID INT PRIMARY KEY,
+    ISSUESLIST_ID INT,
+    SUMMARY VARCHAR(255) NOT NULL,
+    DESCRIPTION VARCHAR(255),
+    USER_ID_ASSIGNEDTO INT,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+3. Napisz polecenia SQL dodające do tabeli ISSUESLISTS trzy listy zadań o nazwach "ToDo", "In progress" oraz "Done".
+
+INSERT INTO ISSUESLISTS (ID, NAME) VALUES (1, 'ToDo');
+INSERT INTO ISSUESLISTS (ID, NAME) VALUES (2, 'In progress');
+INSERT INTO ISSUESLISTS (ID, NAME) VALUES (3, 'Done');
+
+4. Napisz polecenia SQL dodające do tabeli ISSUES po 5 zadań dla każdej z list.
+
+// Lista ToDo
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUES
+(1, "Przygotowanie prezentacji", "Przygotować prezentację na nadchodzące spotkanie z klientem", 1),
+(1, "Rozwiązanie problemów z serwerem", "Naprawić awarie na serwerze głównym", 2),
+(1, "Aktualizacja oprogramowania", "Zaktualizować wszystkie systemy operacyjne na serwerach", 3),
+(1, "Testowanie nowej funkcji", "Przeprowadzić testy jednostkowe nowej funkcji aplikacji", 4),
+(1, "Szkolenie zespołu", "Zorganizować szkolenie dla nowych członków zespołu", 5);
+
+// Lista In progress
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUES
+(2, "Planowanie kampanii reklamowej", "Przygotować plan kampanii reklamowej na nadchodzący miesiąc", 1),
+(2, "Aktualizacja strony internetowej", "Zaktualizować treści na stronie internetowej firmy", 2),
+(2, "Rozwiązanie problemu z dostawcą", "Skontaktować się z dostawcą w celu rozwiązania problemów z dostawą", 3),
+(2, "Przygotowanie raportu finansowego", "Przygotować raport finansowy za ostatni kwartał", 4),
+(2, "Spotkanie z klientem", "Zaplanować spotkanie z kluczowym klientem w celu omówienia projektu", 5);
+
+// Lista Done
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUES
+(3, "Zrozumienie dziedziczenia w Javie", "Przeczytaj materiały na temat dziedziczenia w języku Java", 1),
+(3, "Napisz prosty program Java", "Napisz prosty program w języku Java, który przyjmuje od użytkownika liczbę całkowitą", 2),
+(3, "Ćwiczenia z pętlami", "Rozwiąż kilka zadań praktycznych z użyciem różnych rodzajów pętli",  3),
+(3, "Zaawansowane struktury danych", "Zbadaj listy, stosy i kolejki, w języku Java", 4),
+(3, "Tworzenie interfejsów użytkownika w Javie", "Zaprojektuj prostą aplikację z interfejsem graficznym", 5);
+
