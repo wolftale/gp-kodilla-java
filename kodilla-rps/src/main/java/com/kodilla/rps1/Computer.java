@@ -1,4 +1,4 @@
-git package com.kodilla.rps1;
+package com.kodilla.rps1;
 
 import java.util.Random;
 
