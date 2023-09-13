@@ -44,5 +44,28 @@ public class SudokuBoard extends Prototype<SudokuBoard> {
         }
         return sudokuBoard.toString();
     }
-}
 
+    public SudokuBoard deepCopy() {
+        SudokuBoard clonedBoard = new SudokuBoard(this.size);
+        clonedBoard.sectionSize = this.sectionSize;
+
+        for (int i = 0; i < size; i++) {
+            SudokuRow originalRow = this.rows.get(i);
+            SudokuRow clonedRow = clonedBoard.rows.get(i);
+
+            for (int j = 0; j < size; j++) {
+                SudokuElement originalElement = originalRow.getElement(j);
+                SudokuElement clonedElement = clonedRow.getElement(j);
+
+                clonedElement.setValue(originalElement.getValue());
+
+                List<Integer> originalPossibleValues = originalElement.getPossibleValues();
+                List<Integer> clonedPossibleValues = new ArrayList<>(originalPossibleValues);
+
+                clonedElement.getPossibleValues().clear();
+                clonedElement.getPossibleValues().addAll(clonedPossibleValues);
+            }
+        }
+        return clonedBoard;
+    }
+}

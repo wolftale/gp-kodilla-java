@@ -14,8 +14,10 @@ public class SudokuGame {
             int boardSize = scanner.nextInt();
             scanner.nextLine();
 
-            SudokuBoard board = new SudokuBoard(boardSize);
-            board.initializeBoard();
+            SudokuBoard originalBoard = new SudokuBoard(boardSize);
+            originalBoard.initializeBoard();
+
+            SudokuBoard board = originalBoard.deepCopy(); // Make a deep copy
 
             System.out.println("Enter Sudoku in the form \"x,y,z\", where x is the row, y is the column, z is the value. Enter 'SUDOKU' to solve: ");
             String input;

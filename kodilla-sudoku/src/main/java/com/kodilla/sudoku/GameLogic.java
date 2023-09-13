@@ -9,10 +9,6 @@ public class GameLogic {
         this.backtrack = new Backtrack(board, 0, 0, 0);
     }
 
-    public SudokuBoard getBoard() {
-        return board;
-    }
-
     public boolean resolveSudoku() {
         return resolveSudoku(0, 0);
     }
