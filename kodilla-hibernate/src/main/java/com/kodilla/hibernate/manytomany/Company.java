@@ -5,6 +5,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.retrieveWithThreeFirstLetters",
+                query = "SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = :NAME",
+                resultClass = Company.class
+        ),
+})
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

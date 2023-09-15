@@ -6,6 +6,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.retrieveWithLastname",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        ),
+})
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
