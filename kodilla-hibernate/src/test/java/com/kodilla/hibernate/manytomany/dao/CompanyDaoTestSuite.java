@@ -63,6 +63,7 @@ public class CompanyDaoTestSuite {
             companyDao.deleteById(greyMatterId);
         } catch (Exception e) {
             //do nothing
+
         }
     }
 
