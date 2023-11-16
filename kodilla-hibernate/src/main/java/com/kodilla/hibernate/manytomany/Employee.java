@@ -1,8 +1,7 @@
 package com.kodilla.hibernate.manytomany;
 
 import jakarta.persistence.*;
-import org.jetbrains.annotations.NotNull;
-
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
