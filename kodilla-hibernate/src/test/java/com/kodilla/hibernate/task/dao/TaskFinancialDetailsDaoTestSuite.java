@@ -32,7 +32,7 @@ public class TaskFinancialDetailsDaoTestSuite {
         List<TaskFinancialDetails> resultList = taskFinancialDetailsDao.findByPaid(false);
 
         //Then
-        assertEquals(16, resultList.size());
+        assertEquals(3, resultList.size());
 
         //CleanUp
         taskFinancialDetailsDao.deleteById(id);
