@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.Random;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class CrudAppTestSuite {
     private static final String BASE_URL = "https://wolftale.github.io";
     private WebDriver driver;
@@ -121,4 +123,12 @@ public class CrudAppTestSuite {
         Thread.sleep(5000);
     }
 
+    @Test
+    public void shouldCreateTrelloCard() throws InterruptedException {
+        String taskName = createCrudAppTestTask();
+        sendTestTaskToTrello(taskName);
+        driver.switchTo().alert().accept();
+        assertTrue(checkTaskExistsInTrello(taskName));
+        deleteTaskFromCrudApp(taskName);
+    }
 }
