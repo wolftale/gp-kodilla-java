@@ -51,23 +51,23 @@ public class CrudAppTestSuite {
     public void sendTestTaskToTrello(String taskName) throws InterruptedException {
         driver.navigate().refresh();
 
-        while(!driver.findElement(By.xpath("//select[1]")).isDisplayed());   // [2]
+        while(!driver.findElement(By.xpath("//select[1]")).isDisplayed());
 
         driver.findElements(
-                        By.xpath("//form[@class=\"datatable__row\"]")).stream()           // [3]
-                .filter(anyForm ->                                             // [4]
-                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]")) // [5]
-                                .getText().equals(taskName))                        // [6]
-                .forEach(theForm -> {                                          // [7]
-                    WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));    // [8]
-                    Select select = new Select(selectElement);                 // [9]
-                    select.selectByIndex(1);                                   // [10]
+                        By.xpath("//form[@class=\"datatable__row\"]")).stream()
+                .filter(anyForm ->
+                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
+                                .getText().equals(taskName))
+                .forEach(theForm -> {
+                    WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));
+                    Select select = new Select(selectElement);
+                    select.selectByIndex(1);
 
-                    WebElement buttonCreateCard =                              // [11]
-                            theForm.findElement(By.xpath(".//button[contains(@class, \"card-creation\")]")); // [12]
-                    buttonCreateCard.click();                                  // [13]
-                });                                                            // [14]
-        Thread.sleep(5000);                                                  // [15]
+                    WebElement buttonCreateCard =
+                            theForm.findElement(By.xpath(".//button[contains(@class, \"card-creation\")]"));
+                    buttonCreateCard.click();
+                });
+        Thread.sleep(5000);
     }
 
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
